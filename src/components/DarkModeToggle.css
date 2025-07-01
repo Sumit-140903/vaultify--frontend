@@ -1,0 +1,29 @@
+.theme-toggle {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  border-radius: 50%;
+  font-size: 1.5rem;
+  padding: 0.6rem;
+  cursor: pointer;
+  z-index: 1000;
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+}
+
+.theme-toggle:hover {
+  transform: scale(1.1);
+}
+
+/* Optional: root theming */
+body[data-theme='dark'] {
+  background-color: #111;
+  color: #eee;
+}
+
+body[data-theme='light'] {
+  background-color: #fff;
+  color: #111;
+}

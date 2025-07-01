@@ -1,0 +1,145 @@
+body {
+  margin: 0;
+  padding: 0;
+  background: radial-gradient(circle at top left, #1a1a2e, #16213e);
+  overflow: hidden;
+  font-family: 'Orbitron', sans-serif;
+  position: relative;
+  z-index: 0;
+}
+
+body::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: url('https://www.transparenttextures.com/patterns/stardust.png');
+  opacity: 0.07;
+  z-index: -2;
+  animation: slowPan 60s linear infinite;
+}
+
+@keyframes slowPan {
+  0% { transform: translate(0, 0); }
+  100% { transform: translate(-100px, -100px); }
+}
+
+.login-container {
+  max-width: 420px;
+  margin: 100px auto;
+  padding: 40px;
+  border-radius: 20px;
+  background: rgba(34, 48, 76, 0.7);
+  backdrop-filter: blur(20px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  text-align: center;
+  font-family: 'Orbitron', sans-serif;
+  color: #eef6ff;
+  position: relative;
+  z-index: 2;
+}
+
+.login-container::before {
+  content: '';
+  position: absolute;
+  top: -10%;
+  left: -10%;
+  width: 120%;
+  height: 120%;
+  background: linear-gradient(135deg, #1a1a2e, #0f3460);
+  z-index: -2;
+  filter: blur(80px);
+}
+
+.login-container h2 {
+  margin-bottom: 30px;
+  font-size: 1.8rem;
+  color: #e3f6f5;
+  text-shadow: 0 0 10px #00f7ff44;
+}
+
+.login-container form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.login-container input {
+  padding: 14px;
+  border-radius: 12px;
+  border: 1px solid rgba(122, 252, 255, 0.2);
+  background: rgba(255, 255, 255, 0.05);
+  color: #ffffff;
+  font-size: 15px;
+  transition: all 0.3s ease;
+  box-shadow: inset 0 0 10px rgba(0, 247, 255, 0.05);
+}
+
+.login-container input::placeholder {
+  color: rgba(255, 255, 255, 0.55);
+}
+
+.login-container input:focus {
+  border-color: #7afcff;
+  outline: none;
+  box-shadow: 0 0 12px #00f7ff55;
+}
+
+.login-btn {
+  background: linear-gradient(135deg, #7afcff, #00f7ff);
+  color: #0f1c2c;
+  padding: 14px;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 16px #00f7ff33;
+}
+
+.login-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 28px #00f7ffaa;
+  background: linear-gradient(135deg, #00f7ff, #7afcff);
+}
+.fingerprint-btn {
+  margin-top: 20px;
+  padding: 12px;
+  font-size: 15px;
+  font-weight: bold;
+  background: linear-gradient(135deg, #131f2e, #203142);
+  color: #7afcff;
+  border: 1px solid rgba(122, 252, 255, 0.3);
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 10px rgba(0, 247, 255, 0.2);
+}
+
+.fingerprint-btn:hover {
+  background: #152c41;
+  box-shadow: 0 0 20px rgba(0, 247, 255, 0.4);
+}
+
+.register-btn {
+  margin-top: 12px;
+  padding: 12px;
+  font-size: 15px;
+  font-weight: bold;
+  background: rgba(255, 255, 255, 0.08);
+  color: #7afcff;
+  border: 1px solid rgba(122, 252, 255, 0.3);
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 8px rgba(0, 247, 255, 0.1);
+}
+
+.register-btn:hover {
+  background: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 0 15px rgba(0, 247, 255, 0.2);
+}

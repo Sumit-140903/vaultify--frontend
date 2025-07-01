@@ -1,0 +1,187 @@
+/* src/components/ConnectWallet.css */
+.connect-page {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: radial-gradient(ellipse at top left, #0f172a, #0a0e1a);
+  overflow: hidden;
+  position: relative;
+  perspective: 1000px;
+}
+
+.connect-card {
+  z-index: 1;
+  width: 360px;
+  padding: 2rem;
+  border-radius: 20px;
+  text-align: center;
+  transition: transform 0.3s ease;
+  transform-style: preserve-3d;
+  font-family: 'Orbitron', sans-serif;
+}
+
+.glass-bg {
+  background: rgba(15, 23, 42, 0.65);
+  backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 8px 32px rgba(0, 255, 255, 0.2);
+}
+
+.glow-border {
+  border: 1px solid rgba(0, 255, 255, 0.4);
+  animation: borderGlow 4s linear infinite;
+}
+
+@keyframes borderGlow {
+  0% { box-shadow: 0 0 8px #00f7ff33, 0 0 16px #00f7ff44; }
+  50% { box-shadow: 0 0 24px #00f7ffaa, 0 0 40px #00f7ffcc; }
+  100% { box-shadow: 0 0 8px #00f7ff33, 0 0 16px #00f7ff44; }
+}
+
+.meta-logo {
+  width: 80px;
+  margin-bottom: 1rem;
+  filter: drop-shadow(0 0 12px #ff7b00aa);
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-8px); }
+}
+
+.connect-card h2 {
+  font-size: 1.8rem;
+  background: linear-gradient(90deg, #00f7ff, #7afcff, #00f7ff);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  animation: shineText 5s linear infinite;
+  letter-spacing: 1px;
+  text-shadow: 0 2px 5px rgba(0,255,255,0.3);
+}
+
+@keyframes shineText {
+  0% { background-position: 0% }
+  100% { background-position: 200% }
+}
+
+.connect-card p {
+  color: #ffffff;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.7);
+}
+
+.connect-btn {
+  margin-top: 1.5rem;
+  padding: 12px 24px;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 12px;
+  background: #ff7b00;
+  color: white;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 4px 15px #ff7b00aa;
+  transition: all 0.3s ease, box-shadow 0.3s ease;
+}
+
+.connect-btn:hover {
+  background: #ffa940;
+  transform: scale(1.05);
+  box-shadow: 0 0 12px #ffae42, 0 0 24px #ff7b00;
+}
+
+.connect-tagline {
+  position: absolute;
+  bottom: 30px;
+  text-align: center;
+  width: 100%;
+  color: #7afcff;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1rem;
+  opacity: 0.8;
+  text-shadow: 0 0 5px #00f7ff88;
+}
+
+.floating-circles {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.circle {
+  position: absolute;
+  border: 1px solid rgba(0, 247, 255, 0.2);
+  border-radius: 50%;
+  animation: rotate 20s linear infinite;
+}
+
+.circle1 {
+  width: 300px;
+  height: 300px;
+  top: 10%;
+  left: 5%;
+}
+
+.circle2 {
+  width: 400px;
+  height: 400px;
+  bottom: 5%;
+  right: 10%;
+}
+
+@keyframes rotate {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.aurora-top, .aurora-bottom {
+  position: absolute;
+  width: 100%;
+  height: 200px;
+  background: radial-gradient(circle at center, rgba(0, 247, 255, 0.4), transparent 70%);
+  filter: blur(100px);
+  opacity: 0.6;
+  z-index: 0;
+}
+
+.aurora-top {
+  top: 0;
+  left: 0;
+}
+
+.aurora-bottom {
+  bottom: 0;
+  right: 0;
+}
+
+.float-icon {
+  position: absolute;
+  width: 40px;
+  opacity: 0.08;
+  animation: floatY 12s ease-in-out infinite;
+}
+
+.icon1 { top: 20%; left: 10%; animation-delay: 0s; }
+.icon2 { bottom: 15%; right: 12%; animation-delay: 2s; }
+.icon3 { top: 50%; right: 8%; animation-delay: 4s; }
+
+@keyframes floatY {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-20px) rotate(10deg); }
+}
+
+.connect-page::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(to right, rgba(255,255,255,0.03) 1px, transparent 1px),
+                    linear-gradient(to bottom, rgba(255,255,255,0.03) 1px, transparent 1px);
+  background-size: 40px 40px;
+  z-index: 0;
+  pointer-events: none;
+}

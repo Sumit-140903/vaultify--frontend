@@ -1,0 +1,27 @@
+.history-container {
+  max-width: 700px;
+  margin: 50px auto;
+  padding: 30px;
+  background: #f8f5f5; /* same as .doc-card background */
+  border-radius: 20px;
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.25);
+  font-family: 'Orbitron', sans-serif;
+  color: #ccc;
+  backdrop-filter: blur(10px);
+  border: 1px solid #ffffff;
+  text-align: center;
+}
+
+.history-container h2 {
+  font-size: 2.3rem;
+  margin-bottom: 2rem;
+  font-weight: 700;
+  text-shadow: 0 0 8px rgba(255, 255, 255, 0.3);
+  color: #fff;
+}
+
+.history-container p {
+  font-size: 1rem;
+  color: #ccc;
+  line-height: 1.6;
+}

@@ -1,0 +1,88 @@
+.notification-container {
+  max-width: 700px;
+  margin: 50px auto;
+  background: rgba(255, 255, 255, 0.04); /* Same as doc-card background */
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.25);
+  font-family: 'Orbitron', sans-serif;
+  color: #ccc;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Heading style */
+.notification-container h2 {
+  text-align: center;
+  color: #fff;
+  margin-bottom: 20px;
+  font-weight: 700;
+  text-shadow: 0 0 8px rgba(255, 255, 255, 0.3);
+  font-size: 2.3rem;
+}
+
+/* List layout */
+.notification-list {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Notification card */
+.notification-item {
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 16px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.05);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #ccc;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease;
+}
+
+.notification-item:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* Button actions */
+.notif-actions button {
+  margin-left: 10px;
+  background-color: #ff7b00; /* Accent */
+  color: #fff;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 700;
+  box-shadow: 0 4px 12px #ff7b00aa;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.notif-actions button:hover {
+  background-color: #ffa940;
+  transform: scale(1.05);
+}
+
+/* Badge system */
+.badge {
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 700;
+  text-transform: capitalize;
+  user-select: none;
+}
+
+.badge.approved {
+  background-color: #d1fae5;
+  color: #065f46;
+}
+
+.badge.denied {
+  background-color: #fee2e2;
+  color: #991b1b;
+}
