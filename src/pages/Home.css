@@ -1,14 +1,12 @@
-/* src/styles/Home.css */
-
 .home {
   font-family: 'Segoe UI', sans-serif;
   color: #222;
-  background: linear-gradient(145deg, #1f1c2c, #928DAB, #e94057);
-  background-size: cover;
-  min-height: 100%;
+  min-height: 100vh;
   overflow-x: hidden;
+  overflow-y: auto;
   display: flex;
   flex-direction: column;
+  position: relative;
 }
 
 .home-content {
@@ -19,24 +17,44 @@
   padding: 2rem 1.5rem 80px;
 }
 
-/* Glass background for specific sections */
-.glass-bg {
-  background: rgba(255, 255, 255, 0.08);
-  backdrop-filter: blur(10px);
-  border-radius: 16px;
-  padding: 2rem;
-  margin: 2rem 0;
-  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.15);
-  color: #eee;
+/* ✅ Hero Section with background only behind this section */
+.hero-section-wrapper {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  overflow: hidden;
+  z-index: 1;
 }
 
-/* Hero Section */
+.hero-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 0;
+}
+
 .hero-section {
+  position: relative;
+  z-index: 1;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 4rem 2rem;
   flex-wrap: wrap;
+  min-height: 100vh;
+}
+
+/* Glass background for hero only */
+.glass-bg {
+  background: rgba(249, 248, 248, 0.2);
+  backdrop-filter: blur(10px);
+  border-radius: 16px;
+  padding: 2rem;
+  margin: 2rem 0;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.25);
+  color: #fff;
 }
 
 .hero-text {
@@ -80,7 +98,7 @@
 
 .about-section p {
   font-size: 1.1rem;
-  color: #f1f1f1;
+  color: #eee;
   max-width: 800px;
   margin: 0 auto;
 }

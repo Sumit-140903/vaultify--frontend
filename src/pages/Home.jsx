@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import Footer from '../components/Footer';
+import bgImage from '../assets/bg.jpg';
 import heroImg from '../assets/Hero.jpg';
 import secureIcon from '../assets/secure.png';
 import blockchainIcon from '../assets/blockchain.png';
@@ -34,27 +35,48 @@ function Home() {
       transition={{ duration: 0.6 }}
     >
       <div className="home-content">
-        <section className="hero-section glass-bg">
-          <motion.div
-            className="hero-text"
-            initial={{ x: -100, opacity: 0 }}
-            animate={{ x: 0, opacity: 1 }}
-            transition={{ duration: 1 }}
-          >
-            <h1 className="hero-title">Vaultify</h1>
-            <p className="hero-subtitle">Secure • Verify • Share Documents with Blockchain Confidence</p>
-          </motion.div>
+        {/* ✅ Hero Section with background and glass effect */}
+        <div className="hero-section-wrapper">
+          <div
+            className="hero-background"
+            style={{
+              backgroundImage: `url(${bgImage})`,
+              backgroundSize: 'cover',
+              backgroundPosition: 'center',
+              backgroundRepeat: 'no-repeat',
+              position: 'absolute',
+              top: 0,
+              left: 0,
+              width: '100%',
+              height: '100%',
+              zIndex: 0,
+            }}
+          />
+          <section className="hero-section glass-bg" style={{ position: 'relative', zIndex: 1 }}>
+            <motion.div
+              className="hero-text"
+              initial={{ x: -100, opacity: 0 }}
+              animate={{ x: 0, opacity: 1 }}
+              transition={{ duration: 1 }}
+            >
+              <h1 className="hero-title">Vaultify</h1>
+              <p className="hero-subtitle">
+                Secure • Verify • Share Documents with Blockchain Confidence
+              </p>
+            </motion.div>
 
-          <motion.div
-            className="hero-graphic"
-            initial={{ x: 100, opacity: 0 }}
-            animate={{ x: 0, opacity: 1 }}
-            transition={{ duration: 1 }}
-          >
-            <img src={heroImg} alt="Vaultify Hero" className="hero-img" />
-          </motion.div>
-        </section>
+            <motion.div
+              className="hero-graphic"
+              initial={{ x: 100, opacity: 0 }}
+              animate={{ x: 0, opacity: 1 }}
+              transition={{ duration: 1 }}
+            >
+              <img src={heroImg} alt="Vaultify Hero" className="hero-img" />
+            </motion.div>
+          </section>
+        </div>
 
+        {/* ✅ About Section */}
         <section className="about-section">
           <h2>About Vaultify</h2>
           <p>
@@ -64,6 +86,7 @@ function Home() {
           </p>
         </section>
 
+        {/* ✅ Features */}
         <section className="features-section">
           <h2>Why Choose Vaultify?</h2>
           <div className="features-grid">
@@ -85,6 +108,7 @@ function Home() {
           </div>
         </section>
 
+        {/* ✅ Gallery */}
         <section className="gallery-section">
           <h2>Platform Snapshots</h2>
           <div className="gallery-images">
@@ -94,6 +118,7 @@ function Home() {
           </div>
         </section>
 
+        {/* ✅ How It Works */}
         <section className="how-it-works">
           <h2>How It Works</h2>
           <div className="steps">
@@ -112,27 +137,29 @@ function Home() {
           </div>
         </section>
 
+        {/* ✅ Team */}
         <section className="team-section glass-bg">
           <h2>Meet the Creators</h2>
           <div className="team-grid">
             <div className="team-card">
-              <img src="/assets/avatar1.png" alt="Sumit Thakur" />
-              <h4>Sumit Thakur</h4>
-              <p>Blockchain Engineer</p>
-            </div>
-            <div className="team-card">
-              <img src="/assets/avatar2.png" alt="Ayush Das" />
-              <h4>Ayush Das</h4>
+              <img src="/assets/avatar.png" alt="Amisha Bhagat" />
+              <h4>Amisha Bhagat</h4>
               <p>Frontend Developer</p>
             </div>
             <div className="team-card">
-              <img src="/assets/avatar3.png" alt="Ankit Raj" />
-              <h4>Ankit Raj</h4>
-              <p>Smart Contract Auditor</p>
+              <img src="/assets/avatar.png" alt="Ankit Kumar" />
+              <h4>Ankit Kumar</h4>
+              <p>Backend Developer</p>
+            </div>
+            <div className="team-card">
+              <img src="/assets/avatar.png" alt="Sumit Thakur" />
+              <h4>Sumit Thakur</h4>
+              <p>Blockchain Engineer</p>
             </div>
           </div>
         </section>
 
+        {/* ✅ CTA */}
         <section className="cta-section">
           <h2>Start Securing Your Documents Today</h2>
           <p>Join Vaultify and embrace a safer digital future.</p>
@@ -140,7 +167,7 @@ function Home() {
         </section>
       </div>
 
-      <Footer />
+      
     </motion.div>
   );
 }

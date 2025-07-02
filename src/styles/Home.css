@@ -5,7 +5,7 @@
   color: #222;
   background: linear-gradient(145deg, #1f1c2c, #928DAB, #e94057);
   background-size: cover;
-  min-height: 100%;
+  min-height: 100vh;
   overflow-x: hidden;
   display: flex;
   flex-direction: column;
