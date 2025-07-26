@@ -1,33 +1,222 @@
+/* src/styles/Auth.css */
+
+/*
+  *** IMPORTANT: These are crucial foundational styles for the page layout. ***
+  They ensure the HTML, body, and root div (#root) take up the full viewport height,
+  which is necessary for the .auth-page-wrapper to correctly center its content.
+  Placing them here ensures they are applied when this stylesheet is loaded.
+*/
+html, body, #root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden; /* Prevent scrollbars with full-height backgrounds */
+  font-family: 'Orbitron', sans-serif; /* Ensure your font is loaded globally or here */
+  /* Setting a default background here for the entire page if not overridden by wrapper */
+  background: radial-gradient(ellipse at top left, #0f172a, #0a0e1a);
+}
+
+
+/* This wrapper class will center its content (the registration box) */
+.auth-page-wrapper {
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: center;   /* Center vertically */
+  min-height: 100vh; /* Ensure it takes full viewport height */
+  /* This background will override the body background for this specific page */
+  background: radial-gradient(ellipse at top left, #0f172a, #0a0e1a);
+  position: relative; 
+  z-index: 0; 
+}
+
+/* Background elements copied from ConnectWallet.css for consistency */
+.auth-page-wrapper .aurora-top,
+.auth-page-wrapper .aurora-bottom {
+  position: absolute;
+  width: 100%;
+  height: 200px;
+  /* Softened the aurora glow */
+  background: radial-gradient(circle at center, rgba(0, 247, 255, 0.15), transparent 75%); /* Reduced opacity and wider transparent area */
+  filter: blur(60px); /* Reduced blur */
+  opacity: 0.4; /* Reduced overall opacity */
+  z-index: 0; /* Ensure these are behind the auth box */
+}
+
+.auth-page-wrapper .aurora-top {
+  top: 0;
+  left: 0;
+}
+
+.auth-page-wrapper .aurora-bottom {
+  bottom: 0;
+  right: 0;
+}
+
+.auth-page-wrapper .floating-circles {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 0; 
+  pointer-events: none; 
+}
+
+.auth-page-wrapper .circle {
+  position: absolute;
+  /* Softened circle borders */
+  border: 1px solid rgba(0, 247, 255, 0.1); /* Reduced opacity */
+  border-radius: 50%;
+  animation: rotate 20s linear infinite;
+}
+
+.auth-page-wrapper .circle1 {
+  width: 300px;
+  height: 300px;
+  top: 10%;
+  left: 5%;
+}
+
+.auth-page-wrapper .circle2 {
+  width: 400px;
+  height: 400px;
+  bottom: 5%;
+  right: 10%;
+}
+
+@keyframes rotate {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Softened floating icon opacity */
+.auth-page-wrapper .float-icon {
+  position: absolute;
+  width: 40px;
+  opacity: 0.03; /* Significantly reduced opacity */
+  animation: floatY 12s ease-in-out infinite;
+}
+
+.auth-page-wrapper .icon1 { top: 20%; left: 10%; animation-delay: 0s; }
+.auth-page-wrapper .icon2 { bottom: 15%; right: 12%; animation-delay: 2s; }
+.auth-page-wrapper .icon3 { top: 50%; right: 8%; animation-delay: 4s; }
+
+@keyframes floatY {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-20px) rotate(10deg); }
+}
+
+.auth-page-wrapper::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(to right, rgba(255,255,255,0.015) 1px, transparent 1px), 
+                    linear-gradient(to bottom, rgba(255,255,255,0.015) 1px, transparent 1px); 
+  background-size: 40px 40px;
+  z-index: 0;
+  pointer-events: none;
+}
+
 .auth-container {
-  max-width: 400px;
-  margin: 50px auto;
-  background: white;
-  padding: 30px;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  z-index: 1; 
+  width: 380px; 
+  max-width: 90%;
+  padding: 2.5rem; 
+  border-radius: 20px;
+  text-align: center;
+  font-family: 'Orbitron', sans-serif; 
+
+  background: rgba(255, 255, 255, 0.1); 
+  backdrop-filter: blur(10px); 
+  border: 3px solid rgba(0, 247, 255, 0.15);
+  box-shadow:
+    0 0 5px rgba(0, 247, 255, 0.4),
+    0 0 15px rgba(0, 247, 255, 0.2), 
+    0 0 25px rgba(0, 247, 255, 0.1),
+    0 8px 30px rgba(0, 255, 255, 0.15); 
 }
 
 .auth-container h2 {
-  text-align: center;
-  margin-bottom: 20px;
+  font-size: 2rem; 
+  margin-bottom: 2rem; 
+  background: linear-gradient(90deg, #00c0e0, #40d0f0, #00c0e0); 
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  letter-spacing: 1px;
+  text-shadow: 0 2px 3px rgba(0,255,255,0.15); 
 }
 
 .auth-container form {
   display: flex;
   flex-direction: column;
+  gap: 1.2rem; 
 }
 
 .auth-container input {
-  margin-bottom: 15px;
-  padding: 10px;
-  font-size: 16px;
+  padding: 14px 18px; 
+  border-radius: 10px; 
+  border: 1px solid rgba(255, 255, 255, 0.15); 
+  background: rgba(255, 255, 255, 0.04); 
+  color: #ffffff;
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-.auth-container button {
-  background-color: #0b2471;
-  color: white;
-  padding: 10px;
+.auth-container input::placeholder {
+  color: rgba(255, 255, 255, 0.4); 
+}
+
+.auth-container input:focus {
+  border-color: #00c0e0; 
+  background: rgba(255, 255, 255, 0.08); 
+  box-shadow: 0 0 6px rgba(0, 247, 255, 0.2); 
+}
+
+.register-btn {
+  margin-top: 1.5rem;
+  padding: 14px 28px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  border-radius: 12px;
+  background: linear-gradient(90deg, #00c0e0, #40d0f0); 
+  color: #0a0e1a; 
   border: none;
-  font-size: 16px;
-  border-radius: 5px;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 247, 255, 0.2); 
+  transition: all 0.3s ease-in-out;
+}
+
+.register-btn:hover {
+  background: linear-gradient(90deg, #40d0f0, #00c0e0); 
+  transform: scale(1.03);
+  box-shadow: 0 0 12px rgba(0, 247, 255, 0.4); 
+}
+
+.login-tagline {
+  margin-top: 2rem;
+  color: #ffffff;
+  font-size: 0.95rem;
+  opacity: 0.6; 
+}
+
+.login-tagline a {
+  color: #00c0e0; 
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.login-tagline a:hover {
+  color: #40d0f0; 
+  text-decoration: underline;
+}
+
+.info-message {
+  color: #7afcff; 
+  font-size: 0.9rem;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  text-shadow: 0 0 5px rgba(122, 252, 255, 0.5);
 }

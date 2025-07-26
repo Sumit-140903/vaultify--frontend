@@ -18,32 +18,40 @@
   text-align: center;
   transition: transform 0.3s ease;
   transform-style: preserve-3d;
-  font-family: 'Orbitron', sans-serif;
+  font-family: 'Orbitron', sans-serif; 
 }
 
 .glass-bg {
-  background: rgba(15, 23, 42, 0.65);
-  backdrop-filter: blur(14px);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  box-shadow: 0 8px 32px rgba(0, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.15); /* Increased opacity for a lighter, more visible box */
+  backdrop-filter: blur(15px); /* Adjusted blur for a clearer frosted glass effect */
+  border: 1px solid rgba(255, 255, 255, 0.2); /* Slightly more visible border for definition */
+  box-shadow: 0 8px 50px rgba(12, 242, 242, 0.464); /* Increased shadow for more presence and glow */
+}
+
+.glow-border {
+  border: 5px solid rgba(0, 255, 255, 0.4);
+  /* Removed the blinking animation and replaced with a static glow */
+  box-shadow: 0 0 20px rgba(2, 245, 253, 0.675), 0 0 30px rgba(0, 247, 255, 0.4); /* Static glow */
+  transition: box-shadow 0.3s ease-in-out; /* Smooth transition for static shadow */
 }
 
 .glow-border {
   border: 1px solid rgba(0, 255, 255, 0.4);
-  animation: borderGlow 4s linear infinite;
+  animation: borderGlow 10s linear infinite;
 }
 
 @keyframes borderGlow {
   0% { box-shadow: 0 0 8px #00f7ff33, 0 0 16px #00f7ff44; }
-  50% { box-shadow: 0 0 24px #00f7ffaa, 0 0 40px #00f7ffcc; }
+  50% { box-shadow: 0 0 15px #00f7ff72, 0 0 40px #00f7ff87; }
   100% { box-shadow: 0 0 8px #00f7ff33, 0 0 16px #00f7ff44; }
 }
+
+
 
 .meta-logo {
   width: 80px;
   margin-bottom: 1rem;
-  filter: drop-shadow(0 0 12px #ff7b00aa);
-  animation: float 3s ease-in-out infinite;
+  filter: drop-shadow(0 0 20px #FF5C16); /* Stronger, more vibrant orange glow */
 }
 
 @keyframes float {
@@ -56,7 +64,7 @@
   background: linear-gradient(90deg, #00f7ff, #7afcff, #00f7ff);
   background-clip: text;
   -webkit-background-clip: text;
-  color: transparent;
+  color: transparent; /* Makes the gradient visible */
   animation: shineText 5s linear infinite;
   letter-spacing: 1px;
   text-shadow: 0 2px 5px rgba(0,255,255,0.3);
@@ -78,30 +86,38 @@
   font-size: 16px;
   font-weight: bold;
   border-radius: 12px;
-  background: #ff7b00;
+  background: #FF5C16;
   color: white;
   border: none;
   cursor: pointer;
-  box-shadow: 0 4px 15px #ff7b00aa;
-  transition: all 0.3s ease, box-shadow 0.3s ease;
+  transition: all 0.3s ease-in-out;
 }
 
 .connect-btn:hover {
-  background: #ffa940;
+  background:  #ff7b00;
   transform: scale(1.05);
-  box-shadow: 0 0 12px #ffae42, 0 0 24px #ff7b00;
 }
+
+/* New style for error message */
+.error-message {
+  color: #ff4d4d; /* Red color for errors */
+  font-size: 0.9rem;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  text-shadow: 0 0 5px rgba(255, 77, 77, 0.5); /* Subtle glow for readability */
+}
+
 
 .connect-tagline {
   position: absolute;
   bottom: 30px;
   text-align: center;
   width: 100%;
-  color: #7afcff;
+  color: #ffffff;
   font-family: 'Orbitron', sans-serif;
   font-size: 1rem;
   opacity: 0.8;
-  text-shadow: 0 0 5px #00f7ff88;
+  text-shadow: 0 0 5px #fdffff8e;
 }
 
 .floating-circles {
